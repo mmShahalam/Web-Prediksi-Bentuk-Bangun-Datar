@@ -1,2 +1,11 @@
-# Virtual environments
+# Ignore Python virtual environments
 venv/
+
+# Ignore compiled files
+*.pyc
+__pycache__/
+
+# Ignore large binary files
+*.dll
+*.pyd
+*.exe
