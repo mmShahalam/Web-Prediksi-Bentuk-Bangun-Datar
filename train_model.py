@@ -9,11 +9,14 @@ X_test = np.load("X_test.npy")
 y_train = np.load("y_train.npy")
 y_test = np.load("y_test.npy")
 
-# Reshape data for CNN
+# Update jumlah kategori
+num_classes = 17  # Total kategori dalam dataset baru
+
+# Reshape data untuk CNN
 X_train = X_train.reshape(-1, 64, 64, 1)
 X_test = X_test.reshape(-1, 64, 64, 1)
-y_train = to_categorical(y_train, num_classes=5) #jumlah class bentuk
-y_test = to_categorical(y_test, num_classes=5)
+y_train = to_categorical(y_train, num_classes=num_classes)
+y_test = to_categorical(y_test, num_classes=num_classes)
 
 # Build model
 model = Sequential([
@@ -23,7 +26,7 @@ model = Sequential([
     MaxPooling2D((2, 2)),
     Flatten(),
     Dense(128, activation='relu'),
-    Dense(5, activation='softmax')  # 5 categories
+    Dense(num_classes, activation='softmax')  # 17 kategori
 ])
 
 # Compile model

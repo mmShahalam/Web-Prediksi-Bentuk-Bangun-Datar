@@ -12,6 +12,13 @@ UPLOAD_FOLDER = "static/uploads"
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+# Daftar kategori
+categories = [
+    "Circle", "Decagon", "Heptagon", "Hexagon", "Kite", "Nonagon",
+    "Octagon", "Oval", "Parallelogram", "Pentagon", "Rectangle",
+    "Rhombus", "Semicircle", "Square", "Star", "Trapezoid", "Triangle"
+]
+
 def preprocess_image(img_path):
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
     img = cv2.resize(img, (64, 64)) / 255.0
@@ -35,7 +42,6 @@ def classify():
         # Preprocess gambar dan prediksi
         img = preprocess_image(img_path)
         prediction = model.predict(img)
-        categories = ["Circle", "Square", "Rectangle", "Triangle", "Oval"]
         result = categories[np.argmax(prediction)]
 
         # Kirim hasil prediksi dan path gambar relatif

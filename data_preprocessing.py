@@ -6,7 +6,13 @@ from sklearn.model_selection import train_test_split
 def load_data(data_dir):
     images = []
     labels = []
-    categories = ['circle', 'square', 'rectangle', 'triangle', 'oval']
+
+    # Update daftar kategori
+    categories = [
+        'circle', 'decagon', 'heptagon', 'hexagon', 'kite', 'nonagon',
+        'octagon', 'oval', 'parallelogram', 'pentagon', 'rectangle',
+        'rhombus', 'semicircle', 'square', 'star', 'trapezoid', 'triangle'
+    ]
     label_map = {cat: i for i, cat in enumerate(categories)}
 
     for category in categories:
