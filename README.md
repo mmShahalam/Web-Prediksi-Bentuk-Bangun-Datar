@@ -1,4 +1,4 @@
-# Web Prediksi Bentuk Bangun Datar
+# 📐🔍 Web Prediksi Bentuk Bangun Datar 🖼️
 
 ## 📖 Overview
 Merupakan aplikasi web berbasis **Flask** yang menggunakan **Convolutional Neural Network (CNN)** untuk memprediksi bentuk geometris dari gambar yang diunggah pengguna.
